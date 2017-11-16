@@ -1,0 +1,22 @@
+<div>
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+
+<form #form1="ngForm" (ngSubmit)=doSubmit(0)>
+  <label>Timer 1: </label>
+  <select [(ngModel)]="timers[0].mode" name="timers[0].mode">
+    <option *ngFor="let option of options" value={{option.id}}>{{option.name}}</option>
+  </select>
+  <input [(ngModel)]="timers[0].startAt" name="timers[0].startAt">
+  <button>Submit</button>
+</form>
+<form #form2="ngForm" (ngSubmit)=doSubmit(1)>
+  <label>Timer 2: </label>
+  <select [(ngModel)]="timers[1].mode" name="timers[1].mode">
+    <option *ngFor="let option of options" value={{option.id}}>{{option.name}}</option>
+  </select>
+  <input [(ngModel)]="timers[1].startAt" name="timers[1].startAt">
+  <button>Submit</button>
+</form>
