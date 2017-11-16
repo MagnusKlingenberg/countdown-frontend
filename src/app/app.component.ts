@@ -28,7 +28,7 @@ export class AppComponent {
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(this.timers[id]);
     return this.http.put('http://127.0.0.1:3000/timers/' + id, body, options).map(res => res.json()).subscribe(
-      data => this.timers[id] = data;
+      data => this.timers[id] = data
     );
   }
 
@@ -36,7 +36,7 @@ export class AppComponent {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.get('http://127.0.0.1:3000/timers/').map(res => res.json()).subscribe(
-      data => this.timers = data;
+      data => this.timers = data
     );
 
   }
